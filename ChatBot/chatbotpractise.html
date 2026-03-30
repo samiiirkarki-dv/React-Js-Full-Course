@@ -15,27 +15,32 @@
       function ChatInput() {
         return (
           <>
-            <input placeholder="Enter a message" width="30"/>
+            <input placeholder="Send a message to Chatbot" size="30" />
             <button>Send</button>
           </>
         );
       }
 
-      function ChatMessage(){
+      function ChatMessage({message, sender}) {
         return (
-            <div>
-                
-                </div>
-        )
+          <div>
+            {sender === "robot" && <img src="robot.png" width="50"/>}
+            {message}
+            {sender === "user" && <img src="user.png" width="50"/>}
+          </div>
+        );
       }
 
       function App() {
         return (
-            <>
+          <>
             <ChatInput />
-            <ChatInput />
-            </>
-        )
+            <ChatMessage message="hello chatbot" sender="user" />
+            <ChatMessage message="Hello! How can I help you?" sender="robot" />
+            <ChatMessage message="can you get me today's date" sender="user" />
+            <ChatMessage message="today is March 29" sender="robot" />
+          </>
+        );
       }
 
       const container = document.querySelector(".js-container");
