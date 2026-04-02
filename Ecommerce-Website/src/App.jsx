@@ -3,6 +3,7 @@ import { HomePage } from './Pages/HomePage'
 import { CheckoutPage } from './Pages/CheckoutPage'
 import { OrderPages } from './Pages/OrderPages'
 import { TrackingPage } from './Pages/TrackingPage';
+import { Header } from './components/Header';
 import './App.css'
 
 function App() {
